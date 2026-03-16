@@ -58,7 +58,7 @@ export default function Footer({ onCustomize }) {
       </Tooltip>
 
       <p className="leading-snug text-text-tertiary m-0 text-right" style={{ fontSize: "var(--font-size-small)" }}>
-        Built with Claude Code &middot; &copy; 2026 Taylor Yeerong
+        Built with Claude Code<br className="sm:hidden" /> &middot; &copy; 2026 Taylor Yeerong
       </p>
     </footer>
   );
