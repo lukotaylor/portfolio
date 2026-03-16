@@ -1,0 +1,20 @@
+/* ============================================================================
+   TYPOGRAPHY TOKENS — Source of Truth
+   Import this file in globals.css. Use var(--font-size-*) in components.
+   ============================================================================
+
+   Scale (5 tiers):
+   display  — hero intro, case study titles
+   heading  — section headers
+   body     — paragraphs, descriptions
+   small    — captions, pills, badges
+   label    — uppercase labels only
+   ============================================================================ */
+
+:root {
+  --font-size-display: clamp(1.5rem, 3vw, 2.125rem);
+  --font-size-heading: clamp(1.125rem, 2vw, 1.25rem);
+  --font-size-body:    clamp(0.875rem, 1.5vw, 1rem);
+  --font-size-small:   clamp(0.75rem, 1.2vw, 0.8125rem);
+  --font-size-label:   clamp(0.75rem, 1.2vw, 0.8125rem);
+}

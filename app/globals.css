@@ -1,26 +1,202 @@
 @import "tailwindcss";
+@import "./design-system/tokens.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ============================================================================
+   THEME COLOR PALETTES — CSS Custom Properties
+   Set via [data-theme="..."] on a parent element, switched at runtime.
+   ============================================================================ */
+
+/* Dark (default) */
+[data-theme="dark"] {
+  --color-bg-primary: #111111;
+  --color-bg-card: #1b1a1a;
+  --color-bg-hover: #1a1a1a;
+  --color-border: rgba(255, 255, 255, .18);
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a1a1a1;
+  --color-text-tertiary: #737373;
+  --color-accent: #94a3b8;
+  --color-accent-hover: #cbd5e1;
+  --color-avatar-gradient: linear-gradient(135deg, #64748b 0%, #475569 50%, #334155 100%);
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-button-primary-text: #0f172a;
+  --color-button-secondary-border: rgba(255, 255, 255, 0.8);
+  --color-button-tonal-bg: rgba(148, 163, 184, 0.12);
 }
+
+
+
+/* Light */
+[data-theme="light"] {
+  --color-bg-primary: #e9eee9;
+  --color-bg-card: #f5f8f5;
+  --color-bg-hover: #ebf1ee;
+  --color-border: rgba(36, 64, 42, 0.18);
+  --color-text-primary: #121A13;
+  --color-text-secondary: #3D5243;
+  --color-text-tertiary: #6B7D70;
+  --color-accent: #296f5a;
+  --color-accent-hover: rgb(39, 83, 71);
+  --color-avatar-gradient: #296f5ac7;
+  --color-shadow: rgba(18, 26, 19, 0.04);
+  --color-button-primary-text: #ffffff;
+  --color-button-secondary-border: rgba(36, 64, 42, 0.25);
+  --color-button-tonal-bg: rgba(41, 111, 90, 0.1);
+}
+
+
+
+[data-theme="ocean"] {
+  --color-bg-primary: #ffffff;
+  --color-bg-card: #ffffff;
+  --color-bg-hover: #ffffff;
+  --color-text-primary: #000000;
+  --color-text-secondary: #454c59;
+  --color-text-tertiary: #6b7589;
+  --color-accent: #3f68d9;
+  --color-accent-hover: #7da3fc;
+  --color-border: #ededed;
+  --color-button-tonal-bg: #f5f8ff;
+  --color-button-primary-text: #ffffff;
+}
+
+
+/* Nature */
+[data-theme="nature"] {
+  --color-bg-primary: #0a0e0b;
+  --color-bg-card: #141b14;
+  --color-bg-hover: #1f2820;
+  --color-border: #273527;
+  --color-text-primary: #f0f4f1;
+  --color-text-secondary: #a5b8a9;
+  --color-text-tertiary: #6b8571;
+  --color-accent: #86a289;
+  --color-accent-hover: #a5b8a9;
+  --color-avatar-gradient: linear-gradient(135deg, #6b8f71 0%, #4a6b4f 50%, #2d4a33 100%);
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-button-primary-text: #0a0e0b;
+  --color-button-secondary-border: rgba(255, 255, 255, 0.35);
+  --color-button-tonal-bg: rgba(134, 162, 137, 0.12);
+}
+
+/* Desert */
+[data-theme="desert"] {
+  --color-bg-primary: #17100B;
+  --color-bg-card: #2a1f19;
+  --color-bg-hover: #28201a;
+  --color-border: #5f4b39;
+  --color-text-primary: #faf6f0;
+  --color-text-secondary: #c9b8a5;
+  --color-text-tertiary: #9a8775;
+  --color-accent: #B76046;
+  --color-accent-hover: #d17a62;
+  --color-avatar-gradient: linear-gradient(135deg, #B76046 0%, #9a4a35 50%, #7d3a28 100%);
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-button-primary-text: #ffffff;
+  --color-button-secondary-border: #2f251c;
+  --color-button-tonal-bg: rgba(183, 96, 70, 0.12);
+}
+
+
+/* Space */
+[data-theme="space"] {
+  --color-bg-primary: #0a0d1a;
+  --color-bg-card: #1b1e37;
+  --color-bg-hover: #1a1f33;
+  --color-border: rgba(255, 255, 255, 0.2);
+  --color-text-primary: #e8edf5;
+  --color-text-secondary: #9ca5ba;
+  --color-text-tertiary: #6b7589;
+  --color-accent: #638BFC;
+  --color-accent-hover: #7da3fc;
+  --color-avatar-gradient: #638BFC;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-button-secondary-border: rgba(255, 255, 255, 0.25);
+  --color-button-primary-text: #0a0d1a;
+  --color-button-tonal-bg: rgba(99, 139, 252, 0.15);
+}
+
+/* ============================================================================
+   TAILWIND THEME TOKENS — maps CSS vars to Tailwind utility classes
+   e.g. bg-bg-primary, text-text-primary, border-border, bg-accent, etc.
+   ============================================================================ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-bg-primary: var(--color-bg-primary);
+  --color-bg-card: var(--color-bg-card);
+  --color-bg-hover: var(--color-bg-hover);
+  --color-border: var(--color-border);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-tertiary: var(--color-text-tertiary);
+  --color-accent: var(--color-accent);
+  --color-accent-hover: var(--color-accent-hover);
+  --color-shadow: var(--color-shadow);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  overflow-x: hidden;
+}
+
+* {
+  font-feature-settings: "zero" 1, "ss01" 1;
+  font-variant-numeric: slashed-zero;
+}
+
+[data-font="sanchez"] h1,
+[data-font="sanchez"] h2,
+[data-font="sanchez"] h3,
+[data-font="sanchez"] h4,
+[data-font="sanchez"] h5,
+[data-font="sanchez"] h6 {
+  letter-spacing: 0.045em;
+}
+
+/* ============================================================================
+   MOSAIC CAROUSEL — hide native scrollbar on mobile card carousel
+   ============================================================================ */
+
+.mosaic-carousel-track::-webkit-scrollbar { display: none; }
+.mosaic-carousel-track { scrollbar-width: none; -ms-overflow-style: none; }
+
+/* ============================================================================
+   RESPONSIVE CAROUSEL
+   Mobile: full-width items, Desktop: 66.66% width items
+   ============================================================================ */
+
+.carousel-item {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.carousel-track {
+  transform: translateX(calc(var(--carousel-index, 0) * (-100% - 16px)));
+}
+
+@media (min-width: 768px) {
+  .carousel-item {
+    width: calc(66.66% - 11px);
+    min-width: calc(66.66% - 11px);
+    max-width: calc(66.66% - 11px);
+  }
+
+  .carousel-track {
+    transform: translateX(calc(var(--carousel-index, 0) * (-100% - 16px)));
+  }
+}
+
+@media (max-width: 639px) {
+  .cs-carousel-arrow {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .cs-carousel-arrow-left {
+    left: 8px !important;
+  }
+  .cs-carousel-arrow-right {
+    right: 8px !important;
+  }
 }

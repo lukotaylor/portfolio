@@ -1,0 +1,513 @@
+CASE STUDY CONTENT BACKUP
+Generated before editing — full text, no images
+==================================================
+
+
+══════════════════════════════════════════════════
+P1 — Solo-designed an admin-facing rewards infrastructure from 0→1 ($12.3M ARR)
+══════════════════════════════════════════════════
+
+Team: Solo designer and researcher working alongside two product teams: Recognition & Rewards (1 PM, 8 Eng, 2 QA) and Money Movement (2 PMs).
+
+Audio: /audio/p1.mp3 (1:45)
+
+---
+THE PROBLEM
+---
+Companies were using Paylocity's Recognition feature to give kudos to their employees, but relied on separate tools to reward them. This created a fragmented experience across admins, managers, and employees. Their key pain points include:
+
+- Multiple logins across tools reduced manager adoption of employee rewards
+- Admins had to manually upload reward earnings for Paylocity
+- Admins manually uploaded employee data to external Reward tools
+- Employees had low trust in unfamiliar external reward platforms
+
+---
+THE SOLUTION
+---
+A simple, auditable, end-to-end money movement experience that enables funds to flow from company accounts to managers' Give wallets and ultimately to employees' Redeem wallets for cash redemption. The solution streamlined rewards distribution while accounting for tax implications of Employee Rewards.
+
+[Carousel images: Program & wallets overview, Pre-funding, Fund distribution to boost wallets, Transaction history]
+
+---
+IMPACT & OUTCOMES
+---
+- $12.3M — ARR generated
+- $5.3M — Pre-funded
+- $500K — Moved between wallets
+
+---
+RESEARCH & DISCOVERY
+---
+- Analyzed 500+ survey responses from companies using Paylocity's Recognition feature to understand current rewards tools, gaps, and pain points
+- Ran 6 customer interviews with companies using the Recognition product and 1 internal stakeholder interview
+- Conducted competitive analysis of rewards platforms identified by customers, plus adjacent market solutions
+
+---
+IDENTIFYING KEY EXPERIENCES
+---
+Learnings from client conversations and competitive analysis helped us define key archetypes and put together job-to-be-done (JTBD) for each of them. This helps ensure that we are prioritizing experiences that align closely with user needs and expectations.
+
+Personas:
+
+HR Admin
+JTBD: As an admin, I want to fund and manage rewards in one place so I can ensure employees and managers have the funds they need to reward great work.
+
+Manager
+JTBD: As a manager, I want to reward employees for doing a great job, so I can positively reinforce the desired behaviors and motivate my team with tangible incentives.
+
+Employee
+JTBD: As an employee, I want to view and use the rewards I receive so I understand what I am rewarded for and redeem my rewards for cash or gift card.
+
+*Footnote: This case study focuses on the HR admin's experience moving money from the company bank account to Paylocity, and allocating it to employees.
+
+---
+VALIDATING EARLY CONCEPTS
+---
+To make sure our concepts are inline with user mental model, I facilitated 6 usability sessions to validate early concepts and co-create the rewards experience with clients.
+
+We validated the wallet models (company, boost, and redeem wallets) that are keys to the Rewards Management model. These conversations confirmed that the framework resonated with our clients running rewards. One recurring theme was that the transaction history felt too prominent so I adjusted that to be triggered via a text link in the final design.
+
+[Embed: Extensive wireframes for Rewards Management experience]
+
+---
+BACKEND DEPENDENCY
+---
+We partnered with the Money Movement backend team to enable transfers from a company's bank account into the Paylocity reward wallet, then into Boost wallets (give to others) and Redeem wallets (personal use).
+
+A key dependency was transaction timing; there was ambiguity around how long funds would take to post. It was important for these to be explicitly called out and documented visually to align the teams, as the transaction timing varies based on type of transaction (internal transfer vs. bank transfer) and there are many points of API failure.
+
+The flows below helped communicate to engineers the exact behaviors and system statuses to ensure users have trust in the system and didn't think their funds just disappeared.
+
+[Image: Visually calling out how Money Movement API impact the key experiences, examples include API failure, system messages for pending and processing states, etc. This is 1 of 4 flows.]
+
+---
+CONSTRAINTS & TRADE-OFFS
+---
+Constraint: Large datasets (500+ employees) weren't loading properly, which means the table experiences will not load for companies with more than 500 employees.
+
+Our solution: We limited Reward Givers to managers instead of enabling peer-to-peer rewards. We also simplified wallet management by avoiding bulk loading of all employee wallets.
+
+Trade-off: We optimized for speed to market, knowing the solution wouldn't yet support different type of reward programs (e.g., peer-to-peer). This will be supported post MVP. Our engineering did a spike and found a technical solution without compromising the user experience.
+
+---
+KEY TAKEAWAY
+---
+I learned to leverage the credibility of others when I'm the only one advocating for users in a room of engineers.
+
+Engineers had a strong stance: The engineering team heavily pushed for a "build up" experience for the main use case of allocating money from the company wallet to managers' Give wallets because of tech constraints.
+
+Pushing back: This "build up" table pattern wasn't consistent with Paylocity's platform or industry norms, and would be confusing. Imagine landing on a key experience and seeing an empty table, and learning that you have to build up a list of people. I predicted lots of confusion, low adoption, and many support tickets.
+
+How we compromised: I leveraged other people's credibility by bringing in the design system team as well as my UX team to champion for the industry standard table experience, which landed us at a compromise for MVP which was only allowing managers to boost.
+
+
+══════════════════════════════════════════════════
+P2 — Unified and redesigned fragmented recognition experiences, increasing recognition by 150%
+══════════════════════════════════════════════════
+
+Team: Solo designer for desktop working alongside 2 PMs, 12 Engs, and 2 QAs. Lead designer for mobile working alongside 3 rotating designers.
+
+---
+THE PROBLEM
+---
+Paylocity's Recognition tool was a legacy feature that lived in multiple areas of the Paylocity suite. It had several visual variations, was built on different tech stacks, and wasn't easy to find or use. The tool lacked clear product direction because it was originally built for internal use and later made available to customers at no cost.
+
+[Carousel images: Legacy feed in HR & Payroll product, Legacy leaderboard, Give Recognition, Recognition feed in Community product]
+
+Paylocity identified an opportunity to evolve this legacy tool and pair it with a brand-new Rewards offering to create a standalone Recognition & Rewards product. This gave us the opportunity to reimagine how workplace Recognition fits within the broader suite.
+
+---
+THE SOLUTION
+---
+- Shipped a net-new, design-system compliant Recognition landing page experience
+- Shipped a redesigned, design system compliant Give Recognition experience
+- Built a plug-and-play Give Recognition experience, enabling it to surface across the platform at meaningful moments (next on the roadmap)
+- Cross-integrated with the following teams: Learning Management System, Community, Home, Calendar, and AI + Recommendation
+
+[Carousel images: landing page, cash redemption, give recognition, preview recognition]
+
+---
+IMPACT & OUTCOMES
+---
+- 150% — Increase in Recognition Sent
+- 110% — Increase in Comments
+- X% — Adoption Goal Met
+
+---
+RESEARCH & DISCOVERY
+---
+- Conducted 8 interviews with internal Recognition users to understand how they used the tool (pro: fast access to insights since the tool was free and widely used internally; con: insights could not be fully generalized to customers)
+- Strategized where and how to surface the Give Recognition experience so users didn't have to hunt for it; brainstormed cross-integration opportunities with product
+- Presented the strategy at Product Strategy Council to gain leadership buy-in and influence adjacent roadmaps
+- Performed a competitive analysis to understand what good looks like and how we could differentiate
+
+[Embed: Cross-integration opportunities in mobile]
+
+---
+IDENTIFYING MVP DIRECTION
+---
+Users found value in the existing experiences, particularly the leaderboard, the feed, and the Give Recognition flow. While the Give Recognition experience was bare-bones, it effectively supported the core job. Rather than reinventing the experience, I focused on clarifying what already worked.
+
+For MVP, I recommended leveraging our existing experiences while restructuring the IA to better align with user priorities. I conducted a stacked ranking survey to inform the landing page IA. The data users see would prioritize the people they care about most (themselves, their direct reports, and their indirect reports), backed by interview insights.
+
+In addition to unifying and redesigning the existing Recognition experiences, we layered in the net-new Rewards giving experience as well.
+
+[Images: Affinity map from customer interviews (grid view), Affinity map from customer interviews (list view)]
+
+---
+DESIGN VALIDATION
+---
+There were a total of 4 usability tests via Maze (with internal users) and User Testing (external users). I also reached out to internal power users more informally to get quick validations.
+
+- 8 usability tests to get insights on a Recognition card structure
+- 8 usability tests to get insights on landing page concept
+- 160+ usability tests to validate the Give Recognition experience on desktop
+- 10 usability tests to validate the Give Recognition experience on mobile
+- Adhoc convos with internal power users for quick gut checks on various decisions
+- Recurring syncs with triad and stakeholders to ensure alignment on both strategy and patterns
+
+[Images: Validating early landing page concept, Validating the Give Recognition experience]
+
+---
+HANDLING DEPENDENCIES
+---
+Design systems for both desktop and mobile were evolving during this project. I partnered closely with the design systems team to prioritize the components Recognition needed in order to launch on time with the updated visual language. This reduced future UX and technical debt.
+
+---
+KEY TAKEAWAY
+---
+This project reiterated that I don't have to be the loudest voice in the room to drive meaningful outcomes. I continuously leveraged user interviews and survey data to advocate for design decisions I believed in.
+
+Personalized messages: Recognition originally did not require a message. I advocated for making the message mandatory, framing recognition as a culture-building tool. A recognition without a message doesn't reinforce behavior; it's like a birthday card without a note. After surveying 160+ users, data showed usage was unlikely to drop. I used these findings to align product and leadership.
+
+AI generated messages: Product initially proposed fully AI-generated recognition messages. I pushed back to preserve authenticity. Recognition reinforces behavior and relationships, automating that entirely would weaken its intent. We compromised on a middle ground: AI-powered text refinement rather than fully generated messages, keeping recognition personal and human.
+
+Recognition preview: Survey responses supported adding a preview state. This was also low development effort since similar functionality already existed elsewhere in the platform.
+
+
+══════════════════════════════════════════════════
+P3 — Closed a $700K competitive sales gap by launching gift card redemption
+══════════════════════════════════════════════════
+
+Team: Solo designer for desktop working alongside 2 PMs, 12 Engs, and 2 QAs. Lead designer for mobile working alongside 3 rotating designers.
+
+---
+OVERVIEW
+---
+Recognition & Rewards launched with cash-only redemption for MVP. This strategy made sense for Paylocity because we already had payroll infrastructure and employee bank details.
+
+[Carousel images: SI02–SI06 placeholders]
+
+---
+THE PROBLEM
+---
+The problem is cash redemption required direct deposit and roughly 7% of employees using Paylocity still receive paper checks; this means that they couldn't use the feature. The system also did not support non-USD currencies, which limits the product from scaling internationally.
+
+One of the major problems is HR admins expected parity with established rewards providers. Since gift cards have been a familiar rewards model for years, some companies refused to switch over without this parity. This has created a $700k opportunity gap.
+
+---
+OPPORTUNITY
+---
+After evaluating gift card integration partners, we identified Tango Card as the strongest fit. Their free integration model made this a low-risk, high-leverage way to quickly expand our redemption options.
+
+We were invited to their Seattle headquarters to explore the partnership in depth, reviewing their API, catalog structure, and end-to-end redemption flows. This working session helped us assess technical feasibility, align on experience ownership, and accelerate implementation planning.
+
+---
+WHAT WE DELIVERED
+---
+A curated gift card catalog with 25 most-redeemed options (per Tango Card data). The experience supports end-to-end redemption on both desktop and mobile. Users can also view transaction history to track purchases and retrieve their codes anytime.
+
+---
+IMPACT & OUTCOMES
+---
+- $700K — Sales Gap Closed
+- [x]% — Gift Cards Redeemed vs Cash
+- [x]% — Another Metric
+
+---
+BUILD OPTIONS AND TRADE-OFFS
+---
+We started with competitive analysis to review common gift card catalog patterns and Tango usage data to identify which gift cards we may want to offer. Instead of launching a large catalog, we scoped the MVP to the top 25 most-redeemed cards (per Tango data) to reduce complexity and maintenance.
+
+The biggest decision we had to make was whether to build our own redemption flow or reskin Tango's existing experience.
+
+Option A: Build our own flow
+  PRO: Users see their claim code immediately — fewer steps to start spending rewards.
+  PRO: Full control over the experience and future iteration.
+  CON: Longer development time; delays go-to-market timeline.
+  CON: Higher engineering risk — building from scratch with new API.
+
+Option B: Reskin Tango's experience
+  PRO: Faster launch, lower engineering lift, reduced delivery risk.
+  PRO: Tried-and-true flow that Tango users already understand.
+  CON: Tedious multi-step process — copy security code, open link, paste, retrieve code.
+  CON: Less control over UX; dependent on Tango's implementation.
+
+At the end of the day, we prioritized speed to market. To reduce friction in the Tango gift card redemption flow, I focused on clear content and strong visual hierarchy to clearly communicate the step-by-step.
+
+---
+KEY TAKEAWAY
+---
+This project highlighted the importance of balancing ideal UX with business urgency. While a custom flow offered less friction, prioritizing a 'tried-and-true' integration allowed us to mitigate technical risk and hit our go-to-market targets.
+
+As a designer, I learned that user-centered design isn't just about the fewest clicks, it's about delivering value to the user as quickly as possible. We will continue to monitor feedback post launch to identify areas of opportunities.
+
+
+══════════════════════════════════════════════════
+P4 — Reducing insight discovery from 6+ clicks to just 1
+══════════════════════════════════════════════════
+
+Team: Solo designer working with a product team of 1 PM based in the USA and 1 lead engineer based in India.
+
+Audio: /audio/p4.mp3 (3:24)
+
+---
+THE PROBLEM
+---
+Brands need quick and easy access to what customers are saying about them, whether it's in response to a new product launch or a recent scandal.
+
+The existing workflow for discovering insights in Sprinklr Research was powerful but highly complex and customizable. It required multiple clicks and significant cognitive effort to understand the root cause of an outlier data point.
+
+[Carousel images: SI02–SI06]
+
+---
+THE SOLUTION
+---
+A non-intrusive way to surface data anomalies directly within charts. Some users are primarily interested in overall trends, while others need to report on anomalies. The dashboard needed to support both behaviors without overwhelming either user.
+
+That said, we introduced a way to toggle on this deep insight at a global level. When toggled, a bulb icon appears to indicate anomalies within the chart. To create a clear visual connection, the icon color matches the corresponding chart, helping users quickly associate insights with the correct dataset.
+
+[GIF: With Touchscreen Display, I can immediately find out top posts that contributed to high mentions in San Francisco 49ers!]
+
+---
+IMPACT & OUTCOMES
+---
+- 56K+ — Clicks in 2 Months
+- 3.8K — Users
+- 800+ — Brands
+
+---
+RESEARCH & DISCOVERY
+---
+- Analyzed the existing workflow (6+ clicks required to understand drivers behind one data point)
+- Reviewed existing research (e.g., call recordings) to understand how customers navigated the product in real time
+- Audited the types of data we could surface for MVP, accounting for edge cases
+- Conducted competitive analysis to identify experience gaps, understand who we were losing business to, and explore indirect competitors for fresh perspectives
+
+---
+DEFINING THE KEY EXPERIENCES
+---
+I collaborated closely with my Product partner, gathering information on types of outlier data we can call out, reviewing competitive findings, and chatting through potential ideas.
+
+The VP of Design and UX Manager also had insights and considerations; I made sure to think through those perspectives and update all stakeholders throughout the process as well. From these syncs and conversations, I've boiled the experience down to a few key parts:
+
+Flow:
+1. User enabling the feature
+2. Clicks on data anomaly indicator
+3. Reviews bite size, high level sub-data
+4. Clicks to review sub-data in more detail
+
+---
+SCALABILITY CHALLENGES
+---
+When implementing this feature, the developers brought to my attention that when there are a lot of insights in a chart, the insight bulbs overflow to the x-axis label (Figure A). I pitched a solution to surface a neutral colored (black) icon that has nested insights underneath. This solves for the cluttered and overflowing icons, as well as any accessibility issues (Figure B). This will be our fast-follow update.
+
+[Image Figure A: overflowing insights icon]
+[GIF Figure B: solution for when there's > 1 category in the fly out]
+
+---
+CUSTOMER FEEDBACK
+---
+"The data and insights that appear from these different bubbles is exactly the kind of information that I would love to see easier when we drill down...it gives us a general idea of what is causing a spike. If I currently click to drill down manually, there are a lot of options and a lot of clicks to discover what is going on."
+— Phillip Morris International, Crisis Management Team
+
+"I have looked at the new insights feature. Overall, it looks great and will be a sought after feature. It will probably be even more useful than Smart Theme Explorer."
+— P&G, Solution Owner
+
+---
+TAKEAWAY
+---
+I learned and implemented a key UX principle of Progressive Disclosure. I took an overwhelming amount of data and progressively share them in an easy to digest way. In this case, we start out with an insight icon that signals to users 'hey! there is something here you should look at', we then take them to a fly-out concept that exposes more details. Some users may stop there because that's enough information for them. And for those interested in deeper insights, we have that ready for them, too.
+
+Sprinklr, generally, is a highly complex tool, so I love being able to make complex data easy for people to understand.
+
+
+══════════════════════════════════════════════════
+P5 — Making large-screen data displays interactive
+══════════════════════════════════════════════════
+
+Team: Solo designer working alongside 1 PM and 2 engineers over the course of 3 months.
+
+---
+OVERVIEW
+---
+Sprinklr Display turns social media data into large-format visualizations used in retail stores, executive command centers, stadiums, venues, and even broadcast TVs.
+
+These screens are a powerful story-telling tool and currently support a major use case of real-time data display. However, user conversations revealed a key gap.
+
+[Images: Display command center at Darden Group HQ, Bucks vs Ducks Display at AT&T stadium]
+
+---
+THE PROBLEM
+---
+Users want to understand contributing factors of data anomalies (like a peak in mentions or a drop in sentiment). Currently, this is possible but users need to reach out to the dedicated Display designer to add specific visualizations for this data dimension. Overall, this is a tedious and manual process that requires back and forth communication.
+
+[Image caption: 'Hmm, I wonder what are the top posts that contributed to 4m in mentions of San Francisco 49ers? I think I have to reach out to the dedicated Display designer to set this up.']
+
+---
+THE SOLUTION
+---
+Evolving Sprinklr Display into an interactive experience, where users can drill down into interesting data points and easily find out what contributes to specific data anomalies immediately without additional set-up required.
+
+[GIF caption: 'With Touchscreen Display, I can immediately find out top posts that contributed to high mentions in San Francisco 49ers!']
+
+---
+DISCOVERY
+---
+- Aligned on MVP goals and the specific analytics we will support for our first launch (which came down to the following data: sentiment, themes, volume trends, share of voice)
+- Analyzed competitors and studied large-screen experiences like Netflix and Hulu to understand common navigation patterns for TVs
+- Evaluated touch interaction on large TV screens, defining and understanding reach zones, and optimal touch target sizes
+
+---
+HIGH LEVEL USER FLOW
+---
+Drawing inspirations from competitors and user scenarios, the team and I aligned on the general flow of the Display Touchscreen experience. Users should be able to drill down to any data point on the screen, and return to the primary data layer.
+
+Flow:
+1. Review the primary data layer
+2. Tap to filter into a specific sub-dimension
+3. Review the granular data in that layer
+4. Return to the primary data layer
+
+---
+EXPLORING CONCEPTS
+---
+Concept A: When tapped on a specific data point, users see an overlay experience and are able to navigate a single data source at a time.
+
+This concept made us realized the importance of showing all the data visualizations together to tell a story, rather than putting emphasis on one set of data (top words, sentiment, etc).
+
+[Images: Contextual overlay modal (grayscale), Fullscreen overlay (grayscale)]
+
+Concept B: When tapped on a specific data point, users see all the data sources. They also see a fixed navigation that highlights the specific slice of data they clicked on. This context helps ground the users in a non-disruptive way due to the small footprint. Within this data layer, users can also navigate between different slices of data easily.
+
+This direction resonated with the team as well as our partnered clients, so I continued refining the design based on that structure.
+
+[Images: Bottom navigation (grayscale), Left navigation (grayscale)]
+
+---
+TESTING CONCEPTS
+---
+We tested internally on large-format touch screens. Experiencing the physical interaction ourselves led to some refinements like making the navigation lower on the screen to accommodate different height/reach abilities and using clear visualizations for sentiments.
+
+[Carousel captions:
+- Testing out different visualizations for sentiment toggles, realizing emotion icons do not work well as they are hard to see on large screens, so opted in for a pie chart
+- Realizing the middle placement for previous/next may be a bit too high for reach
+- Relocating the previous/next to be more accessible for folks of all heights
+- Separating out the previous/next to prevent misclick]
+
+---
+FINALIZING THE CONCEPT
+---
+Below is the final concept in 3 different color palettes. When creating a Display, designers can choose off-the-shelf color palettes that Sprinklr provides or create a customize palette for the brand they are designing for.
+
+[Images: touchscreenblack, touchscreenpurple, touchscreenteal]
+
+To ensure that the navigation bar and system statuses of the Touchscreen Display is cohesive and on-brand with the color palette selected, I created a color system for all the new components being introduced (navigation bar, loading state, no data state).
+
+[Carousel captions:
+- General rules for the navigation pulling from the primary color, background color, and font color
+- Additional rules for selected state of sentiment toggles
+- Rules for loading state
+- Rules for no data state]
+
+---
+SENTIMENT POST-LAUNCH
+---
+There was also a lot of excitement from our internal Sales team when this was demoed during a big Sprinklr Sales event. Folks tweeted about their excitement, too. This is important because if Sales are excited, that likely means that they will pitch it passionately and confidently to clients.
+
+[Images: tweet01.gif, tweet02.gif]
+
+
+══════════════════════════════════════════════════
+P6 — Shaping the Enterprise Strategy for Performance
+══════════════════════════════════════════════════
+
+Team: Lead designer working alongside a senior designer and a researcher, with guidance from a principal designer. 11-week sprint focused on strategy and direction-setting.
+
+---
+OVERVIEW
+---
+Paylocity's Performance product was built on legacy technology. It relied on stylesheets, had no React foundation, no shared components, and was not aligned to a design system.
+
+The company mandated a migration of all products to a shared web platform and unified design system. For Performance, this meant rebuilding the experience from the ground up.
+
+This migration created an opportunity to do more than modernize UI. The broader business goal was to evolve Performance into an enterprise-grade solution and increase enterprise wins, a key focus for the fiscal year.
+
+[Carousel images: SI02–SI06 placeholders]
+
+---
+HMW STATEMENT
+---
+How might we evolve Paylocity's Performance product into a robust, enterprise-grade solution that helps us win enterprise clients, better serve core user needs, and drive long-term retention?
+
+---
+RESEARCH & DISCOVERY
+---
+We began digging into existing data and identifying additional research opportunities to start building a perspective and a shared understanding of the current state.
+
+We sifted through feedback and insights across 9 sources:
+
+- 87 SUS survey responses, alongside high level scores
+- 221 in-product feedback submissions
+- Competitive analysis across 6 direct and indirect competitors
+- 172 product development requests (PDRs)
+- 60 competitive feature gaps identified by the Sales team
+- Heuristic evaluation of 22 key tasks across 3 archetypes
+- IA tree testing across 24 tasks across 3 primary archetypes
+- 13 user interviews across 3 archetypes
+- 1 year of utilization data
+
+We spent seven weeks synthesizing a large volume of data, boy was it a lot of analysis! We used AI to help analyze user interview transcripts, but we were intentional about not outsourcing the thinking. We manually reviewed much of the feedback ourselves because reading it firsthand built foundational knowledge and deeper context. Relying solely on AI would have produced summaries, but not understanding.
+
+[Carousel images: SI02–SI06 placeholders]
+
+---
+FROM FINDINGS TO GUIDING PRINCIPLES
+---
+The 9 feedback sources resulted in 220 findings. These were organized into a filterable source-of-truth document in Excel so Product, Design, and Engineering could trace insights back to their origin.
+
+We translated those findings into guiding principles to anchor design decisions in:
+
+- Enable managers and admins to easily manage, assign, and track reviews and related objects
+- Position Performance as a tool for employee development, not just evaluation
+- Provide macro-level visibility into workforce performance and outcomes
+- Bring all performance inputs into one holistic review experience
+- Clarify object structures so setup and participation are intuitive
+- Increase flexibility and control to support complex enterprise scenarios
+
+---
+STRATEGIC DESIGN DIRECTION
+---
+Following 7 weeks of discovery, we dedicated 4 weeks to translating our findings into a holistic product vision. These designs aren't meant to be final blueprints; rather, they serve as data-backed perspectives designed to spark conversation and pressure-test the future of the Performance suite.
+
+- Restructured Navigation: Grouped Goals, Check-ins, and Feedback into a unified Documentation experience to better support the core Reviews workflow.
+- Resolved Feature Ambiguity: Split the confusing Journals tool into two clear, high-intent modules: Check-ins and Disciplinary.
+- Expanded the Lifecycle: Shifted the product from a compliance-only tool to a growth platform by adding post-review workflows like Career Development.
+
+Note: These perspectives represent a broad structural direction. They are our initial perspectives that we shared with the team to spark conversations and gather insights. Now that we have buy-in's to these concepts, we have started doing an OOUX activity to further ideate on the ideal IA.
+
+---
+IMPACT ON ROADMAP
+---
+Findings will be leveraged in roadmap planning. Reviews is one of the first initiatives to migrate over to Web Platform. With high-level discovery complete, UX will use a focused one-month sprint to define the ideal Reviews experience in detail.
+
+These findings will directly inform Product's roadmap planning for the Web Platform migration, surfacing clear recommendations and prioritized improvements rather than executing a lift-and-shift.
+
+---
+KEY TAKEAWAY
+---
+Stakeholder Management:
+On a highly visible project with senior stakeholders, I initially felt pressure to have every answer. What worked better was shifting from presenter to facilitator. By crowdsourcing knowledge in the room and grounding conversations in research, I created alignment without needing to be the sole expert.
+
+Mentoring & Building Empathy:
+The designer supporting this initiative struggled to meet expectations, even after alignment and repeated feedback. At first, this was frustrating, but over time that frustration shifted into understanding and acceptance. I realized that some designers need closer guidance through the process, not just feedback on outcomes. I rolled up my sleeves and partnered with them step by step on their portion of the work, while also pulling them into areas where I knew they could excel to help rebuild confidence.
