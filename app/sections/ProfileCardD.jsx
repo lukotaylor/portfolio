@@ -2,8 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import IconButton from "../components/ui/IconButton";
-import { FileText } from "lucide-react";
-import { SiGithub } from "@icons-pack/react-simple-icons";
+import { FileText, Mail } from "lucide-react";
 
 const LinkedInIcon = ({ size = 15 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -51,8 +50,8 @@ export default function ProfileCardD() {
       {!isMobile && (
         <div style={{ position: "absolute", top: 24, right: 24, display: "flex", gap: 12 }}>
           <IconButton size="md" variant="tonal" ariaLabel="LinkedIn" icon={<LinkedInIcon />} onClick={() => window.open("https://www.linkedin.com/in/tayloryeerong/", "_blank")} />
-          <IconButton size="md" variant="tonal" ariaLabel="GitHub"   icon={<SiGithub color="currentColor" />} onClick={() => window.open("https://github.com/lukotaylor", "_blank")} />
-          <IconButton size="md" variant="tonal" ariaLabel="Resume"   icon={<FileText />} onClick={() => window.open("/resume.pdf", "_blank")} />
+          <IconButton size="md" variant="tonal" ariaLabel="Resume"   icon={<FileText size={16} />} onClick={() => window.open("/resume.pdf", "_blank")} />
+          <IconButton size="md" variant="tonal" ariaLabel="Email"    icon={<Mail size={16} />} onClick={() => window.open("mailto:tayloryeerong@gmail.com")} />
         </div>
       )}
 
@@ -65,8 +64,8 @@ export default function ProfileCardD() {
             </div>
             <div style={{ display: "flex", gap: 10 }}>
               <IconButton size="sm" variant="tonal" ariaLabel="LinkedIn" icon={<LinkedInIcon />} onClick={() => window.open("https://www.linkedin.com/in/tayloryeerong/", "_blank")} />
-              <IconButton size="sm" variant="tonal" ariaLabel="GitHub"   icon={<SiGithub color="currentColor" />} onClick={() => window.open("https://github.com/lukotaylor", "_blank")} />
-              <IconButton size="sm" variant="tonal" ariaLabel="Resume"   icon={<FileText />} onClick={() => window.open("/resume.pdf", "_blank")} />
+              <IconButton size="sm" variant="tonal" ariaLabel="Resume"   icon={<FileText size={14} />} onClick={() => window.open("/resume.pdf", "_blank")} />
+              <IconButton size="sm" variant="tonal" ariaLabel="Email"    icon={<Mail size={14} />} onClick={() => window.open("mailto:tayloryeerong@gmail.com")} />
             </div>
           </div>
           <p style={{ margin: 0, fontSize: "var(--font-size-display)", fontWeight: 700, color: "var(--color-text-primary)", lineHeight: 1.35 }}>

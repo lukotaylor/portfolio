@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Button from "./Button";
 import IconButton from "./IconButton";
 import Footer from "./Footer";
@@ -168,7 +169,7 @@ function Lightbox({ images, startIndex = 0, thumbnails = false, mobileImages = n
     />
   );
 
-  return (
+  return createPortal(
     <div
       onClick={onClose}
       style={{
@@ -283,7 +284,8 @@ function Lightbox({ images, startIndex = 0, thumbnails = false, mobileImages = n
           ))}
         </div>
       )}
-    </div>
+    </div>,
+    document.body
   );
 }
 

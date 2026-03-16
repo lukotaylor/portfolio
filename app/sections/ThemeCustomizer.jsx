@@ -160,59 +160,9 @@ export default function ThemeCustomizer({ onClose }) {
 
         {/* Content */}
         <div className="px-8 pb-8">
-          {/* Color Mode — segmented control */}
+          {/* Theme dropdown */}
           <div className="mb-6">
-            <Label>Color Mode</Label>
-            <div
-              role="radiogroup"
-              aria-label="Color mode"
-              ref={modeRef}
-              style={{
-                display: "flex",
-                borderRadius: 12,
-                border: "1.5px solid var(--color-border)",
-                overflow: "hidden",
-                backgroundColor: "var(--color-bg-primary)",
-              }}
-            >
-              {modeKeys.map((modeKey, i) => {
-                const active = modeKey === currentMode;
-                const Icon = MODE_ICONS[modeKey];
-                return (
-                  <button
-                    key={modeKey}
-                    role="radio"
-                    aria-checked={active}
-                    tabIndex={active ? 0 : -1}
-                    onClick={() => switchMode(modeKey)}
-                    onKeyDown={(e) =>
-                      handleRadioKeyDown(e, modeKeys, i, switchMode)
-                    }
-                    className="cursor-pointer transition-all duration-200 font-medium outline-none"
-                    style={{ fontSize: "var(--font-size-body)" }}
-                    style={{
-                      flex: 1,
-                      padding: "10px 0",
-                      border: "none",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: 6,
-                      backgroundColor: active ? "var(--color-accent)" : "transparent",
-                      color: active ? "var(--color-button-primary-text)" : "var(--color-text-secondary)",
-                    }}
-                  >
-                    {Icon && <Icon />}
-                    {themeModes[modeKey].label}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Style dropdown */}
-          <div className="mb-6">
-            <Label>Style</Label>
+            <Label>Theme</Label>
             <div className="relative">
               <button
                 onClick={() => setShowStyleDropdown(!showStyleDropdown)}

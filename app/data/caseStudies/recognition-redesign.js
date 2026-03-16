@@ -22,10 +22,10 @@ export const recognitionRedesign = {
           sideBySide: true,
           thumbnails: true,
           images: [
-            { src: "/casestudy/RRredesign/ESSlegacy.png", caption: "Legacy feed in HR & Payroll product" },
-            { src: "/casestudy/RRredesign/leaderboard.png", caption: "Legacy leaderboard in HR & Payroll product" },
-            { src: "/casestudy/RRredesign/giveimpression.png", caption: "Give Recognition in HR & Payroll product" },
-            { src: "/casestudy/RRredesign/communityfeed.png", caption: "Recognition feed in Community product" },
+            { src: "/casestudy/RRredesign/ESSLegacy.png", caption: "Legacy feed in HR & Payroll product" },
+            { src: "/casestudy/RRredesign/Leaderboard.png", caption: "Legacy leaderboard in HR & Payroll product" },
+            { src: "/casestudy/RRredesign/GiveImpression.png", caption: "Give Recognition in HR & Payroll product" },
+            { src: "/casestudy/RRredesign/CommunityFeed.png", caption: "Recognition feed in Community product" },
           ],
           mobileImages: [
             { src: "/casestudy/RRredesign/mobile/ESSLegacy.png" },

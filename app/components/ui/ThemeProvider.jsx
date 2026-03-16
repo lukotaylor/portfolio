@@ -20,7 +20,7 @@ const FONT_SIZE_MULTIPLIERS = {
   large: 1.3,
 };
 
-const DEFAULT_THEME = { mode: "space", font: "grotesk", fontSize: "medium" };
+const DEFAULT_THEME = { mode: "nature", font: "jakarta", fontSize: "medium" };
 const STORAGE_KEY = "portfolioTheme";
 
 const ThemeContext = createContext(null);
