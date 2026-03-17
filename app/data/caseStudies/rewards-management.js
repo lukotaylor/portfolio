@@ -96,7 +96,7 @@ export const rewardsManagement = {
             {
               col1: "Ran ==6 customer interviews== with Recognition users and ==1 internal stakeholder interview==",
               col2: [
-                "Companies of different sizes run rewards very differently. Smaller ones allocate directly to employees; larger ones route through managers",
+                "Companies of different sizes run rewards very differently. Smaller ones allocate directly to employees; larger ones route through managers.",
                 "==Our tool needed to be flexible== enough to meet most models without heavy configuration",
               ],
             },

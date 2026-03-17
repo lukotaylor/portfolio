@@ -62,6 +62,11 @@ export function ThemeProvider({ children }) {
     document.documentElement.style.fontSize = `${16 * multiplier}px`;
   }, [multiplier]);
 
+  // Sync data-theme to <html> so body background resolves CSS vars on overscroll
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", activeMode);
+  }, [activeMode]);
+
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <div

@@ -141,7 +141,13 @@ function Lightbox({ images, startIndex = 0, thumbnails = false, mobileImages = n
   const [index, setIndex] = useState(startIndex);
   const isMobile = useMobile();
 
-  const showSideBySide = !!(mobileImages?.length) && !isMobile;
+  useEffect(() => {
+    if (isMobile) onClose();
+  }, [isMobile, onClose]);
+
+  if (isMobile) return null;
+
+  const showSideBySide = !!(mobileImages?.length);
   const currentDesktop = images[index] ?? {};
   const currentMobile = mobileImages?.[index] ?? {};
   const current = currentDesktop;
@@ -344,6 +350,7 @@ function MatchHeightRow({ items, fill, bg, borderRadius = 12, gap = 16, onImageC
 
 function MosaicBlock({ block }) {
   const [lightboxIndex, setLightboxIndex] = useState(null);
+  const isMobile = useMobile();
   const columns = block.columns ?? 3;
   const gap = block.gap ?? 12;
   const images = (block.images ?? []).map((img) =>
@@ -375,13 +382,13 @@ function MosaicBlock({ block }) {
             }}
           >
             <div
-              onClick={() => setLightboxIndex(idx)}
+              onClick={!isMobile ? () => setLightboxIndex(idx) : undefined}
               style={{
                 flex: 1,
                 borderRadius: 12,
                 overflow: "hidden",
                 aspectRatio: aspectRatio ?? (rowSpan > 1 ? undefined : "4/3"),
-                cursor: "zoom-in",
+                cursor: isMobile ? "default" : "zoom-in",
               }}
             >
               <img
@@ -658,7 +665,7 @@ function CarouselBlock({ block }) {
   const [lightbox, setLightbox] = useState(null); // { images, startIndex, thumbnails }
 
   const hasMobileView = !!block.mobileImages?.length;
-  const sideBySide = hasMobileView && block.sideBySide && !isMobile;
+  const sideBySide = hasMobileView && block.sideBySide;
 
   const desktopItems = (block.images ?? []).map((img) =>
     typeof img === "string" ? { src: img, caption: null } : img
@@ -716,8 +723,8 @@ function CarouselBlock({ block }) {
       <div style={{ position: "relative" }}>
         {sideBySide ? (
           <div
-            onClick={() => setLightbox({ images: desktopItems, startIndex: index, thumbnails: !!block.thumbnails, mobileImages: mobileItems, mobileAlign: block.mobileAlign ?? "center" })}
-            style={{ display: "flex", alignItems: block.mobileAlign ?? "center", gap: 16, cursor: "zoom-in" }}
+            onClick={!isMobile ? () => setLightbox({ images: desktopItems, startIndex: index, thumbnails: !!block.thumbnails, mobileImages: mobileItems, mobileAlign: block.mobileAlign ?? "center" }) : undefined}
+            style={{ display: "flex", alignItems: block.mobileAlign ?? "center", gap: 16, cursor: isMobile ? "default" : "zoom-in" }}
           >
             <div style={{ flex: "2 1 0", minWidth: 0, borderRadius: 12, overflow: "hidden" }}>
               <img src={desktopItems[index].src} alt={block.alt ?? ""} style={{ width: "100%", height: "auto", display: "block" }} />
@@ -738,8 +745,8 @@ function CarouselBlock({ block }) {
           </div>
         ) : (
           <div
-            onClick={() => setLightbox({ images: items, startIndex: index, thumbnails: !!block.thumbnails })}
-            style={{ borderRadius: 12, overflow: "hidden", cursor: "zoom-in" }}
+            onClick={!isMobile ? () => setLightbox({ images: items, startIndex: index, thumbnails: !!block.thumbnails }) : undefined}
+            style={{ borderRadius: 12, overflow: "hidden", cursor: isMobile ? "default" : "zoom-in" }}
           >
             <img src={items[index].src} alt={block.alt ?? ""} style={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }} />
           </div>
