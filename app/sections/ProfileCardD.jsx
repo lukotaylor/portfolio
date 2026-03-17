@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import IconButton from "../components/ui/IconButton";
 import { FileText, Mail } from "lucide-react";
 
@@ -36,6 +36,18 @@ const POST_ITS = [
 export default function ProfileCardD() {
   const breakpoint = useBreakpoint();
   const isMobile = breakpoint === "mobile";
+  const gridRef = useRef(null);
+  const [gridWidth, setGridWidth] = useState(0);
+
+  useEffect(() => {
+    const el = gridRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(([entry]) => setGridWidth(entry.contentRect.width));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  const cols = isMobile ? 1 : (gridWidth - 72) / 4 <= 200 ? 2 : 4;
 
   return (
     <div style={{
@@ -88,9 +100,9 @@ export default function ProfileCardD() {
       )}
 
       {/* Post-it cards */}
-      <div style={{
+      <div ref={gridRef} style={{
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+        gridTemplateColumns: `repeat(${cols}, 1fr)`,
         gap: isMobile ? 24 : 24,
         alignItems: "start",
         margin: "0 auto",

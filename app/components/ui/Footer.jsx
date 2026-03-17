@@ -58,8 +58,8 @@ export default function Footer({ onCustomize }) {
       </Tooltip>
 
       <p className="leading-relaxed text-text-tertiary m-0 text-right" style={{ fontSize: "var(--font-size-small)" }}>
-        <span className="hidden sm:inline">Designed by Taylor Yeerong &middot; Built with Claude Code</span>
-        <span className="sm:hidden">Designed by Taylor Yeerong<br />Built with Claude Code</span>
+        <span className="hidden sm:inline">Designed by Taylor Yeerong &hearts; Built with Claude Code</span>
+        <span className="sm:hidden">Designed by Taylor Yeerong<br />&hearts; Built with Claude Code</span>
       </p>
     </footer>
   );
