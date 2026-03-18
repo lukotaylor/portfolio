@@ -7,7 +7,7 @@ export const smartInsights = {
     duration: "3:24",
   },
   vimeoId: "1167935050",
-  teamSummary: "Solo designer working with a product team of 1 PM based in the USA and 1 lead engineer based in India.",
+  teamSummary: "==Solo designer== working with a product team of 1 PM based in the USA and 1 lead engineer based in India.",
   sections: [
     {
       title: "The Problem",
@@ -157,7 +157,7 @@ export const smartInsights = {
         {
           type: "highlight",
           content:
-            "Product's initial direction was to look at competitors for inspiration. I advocated for going deeper first — reviewing call recordings, analyzing the existing workflow, and auditing the data we could surface. That groundwork is what led to the ==progressive disclosure approach==. Understanding the full complexity of the existing workflow made it clear the solution needed to abstract that complexity away, not just borrow a pattern.",
+            "We moved fast to get value to users quickly, with plans to iterate based on real feedback. More usability testing throughout would have been ideal, but with a small research team and a fast-moving timeline, we were strategic about where we invested. Going to market and learning from real usage was the right call for this project.",
         },
       ],
     },

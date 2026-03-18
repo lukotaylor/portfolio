@@ -7,7 +7,7 @@ export const recognitionRedesign = {
     "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop",
     "https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?w=800&h=450&fit=crop",
   ],
-  teamSummary: "Solo designer for desktop working alongside 2 PMs, 12 Engs, and 2 QAs. Lead designer for mobile working alongside 3 rotating designers.",
+  teamSummary: "==Solo designer== for desktop working alongside 2 PMs, 12 Engs, and 2 QAs. ==Lead designer== for mobile working alongside 3 rotating designers.",
   sections: [
     {
       title: "The Problem",
@@ -96,8 +96,7 @@ export const recognitionRedesign = {
               col1: "Conducted ==8 interviews== with internal Recognition users",
               col2: [
                 "Users valued the leaderboard, feed, and Give Recognition flow. The call was to preserve and improve, not reinvent",
-                "Hard to find the right badge when giving recognition",
-                "Hard to confirm the right person — search lacked profile photos and titles to verify identity",
+                "The Give Recognition flow had friction: badges were hard to browse, and the search lacked profile photos and titles to confirm the right person",
               ],
             },
             {

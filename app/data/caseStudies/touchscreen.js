@@ -149,16 +149,6 @@ export const touchscreen = {
       ],
     },
     {
-      title: "Key Takeaway",
-      blocks: [
-        {
-          type: "highlight",
-          content:
-            "With dozens of possible drill-down dimensions, ==keeping users oriented was the core design challenge==. Every navigation decision had to balance two things: giving users enough context to know where they were, while keeping the primary data view front and center.",
-        },
-      ],
-    },
-    {
       title: "Sentiment Post-Launch",
       blocks: [
         {
@@ -170,6 +160,22 @@ export const touchscreen = {
             { src: "casestudy/touchscreen/tweet02.gif"},
           ],
 
+        },
+      ],
+    },
+    {
+      title: "Key Takeaway",
+      blocks: [
+        {
+          type: "highlight",
+          content:
+            "The front-end implementation missed the mark across visual design and interactions. I flagged it repeatedly, which created some tension with the project manager. ==I stood firm== because this is a highly visual product and the interactions and visuals need to be ==pixel-perfect to build credibility, trust, and delight==. The VP of Product loved the final result, and so did the rest of the team. I used to worry about coming across as nitpicky, but I've learned that ==holding that bar sets expectations with developers that the details matter==.",
+        },
+        {
+          type: "quote",
+          content:
+            "Taylor worked closely with the development team and presented designs in iterative waves, each time subjecting the results to acceptance criteria and scrutiny. With Taylor's expertise and team-oriented attitude, the product was elevated dramatically.",
+          attribution: "Justin G., VP of Product at Sprinklr",
         },
       ],
     },
