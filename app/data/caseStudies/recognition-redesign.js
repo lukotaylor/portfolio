@@ -15,7 +15,7 @@ export const recognitionRedesign = {
         {
           type: "paragraph",
           content:
-            "Paylocity's Recognition tool was a legacy feature scattered across multiple areas of the suite, with ==several visual variations, built on different tech stacks, and not easy to find or use.==\n\nWhen Paylocity decided to launch a brand-new Rewards product, it created the opportunity to finally fix Recognition too, combining both into a unified, standalone Recognition & Rewards experience.",
+            "Paylocity's Recognition tool was a legacy feature scattered across multiple areas of the suite, with ==several visual variations, built on different tech stacks, and not easy to find or use.==\n\nWhen Paylocity decided to launch a brand-new Rewards product, it created the opportunity to finally fix Recognition as well, combining both experiences into a unified, standalone Recognition & Rewards experience.",
         },
         {
           type: "carousel",
