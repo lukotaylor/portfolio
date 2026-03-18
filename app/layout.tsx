@@ -25,6 +25,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600&family=Noto+Sans:wght@400;500;600&family=Lexend:wght@400;500;600&family=Work+Sans:wght@400;500;600&family=Sanchez:ital,wght@0,400;1,400&display=swap"
           rel="stylesheet"
         />
+        <meta name="robots" content="noindex, nofollow" />
       </head>
       <body className="antialiased">
         <ThemeProvider>{children}</ThemeProvider>
