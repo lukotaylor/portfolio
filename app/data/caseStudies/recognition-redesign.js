@@ -129,7 +129,11 @@ export const recognitionRedesign = {
         {
           type: "paragraph",
           content:
-            "Users found value in the existing experiences, particularly the leaderboard, the feed, and the Give Recognition flow. While Give Recognition was bare-bones, it effectively supported the core job. Rather than reinventing the experience, I focused on improving what already worked.\n\nFor MVP, I recommended ==restructuring the IA to better align with user priorities== rather than rebuilding from scratch. I ran a stacked ranking survey to inform the landing page, ensuring the experience prioritized the people users care about most: themselves, their direct reports, and their indirect reports. I presented this direction at the Product Strategy Council to gain leadership buy-in and influence adjacent roadmaps.",
+            "Users found value in the existing experiences, particularly the leaderboard, the feed, and the Give Recognition flow. While Give Recognition was bare-bones, it effectively supported the core job. Rather than reinventing the experience entirely, I focused on ==improving what already worked==.\n\nFor MVP, we brought the existing experiences users loved into a unified landing page, rethinking the layout to better fit their needs based on interviews I hosted and competitive signals. I ran a ==stacked ranking survey to further inform prioritization==, ensuring the experience surfaced the people users care about most: themselves, their direct reports, and their indirect reports.",
+        },
+        {
+          type: "paragraph",
+          content: "Interview participants echoed this clearly: users weren't seeing content that felt relevant to them.",
         },
         {
           type: "quote",
