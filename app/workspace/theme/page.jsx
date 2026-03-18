@@ -124,7 +124,7 @@ function LandingPagePreview({ p }) {
               <img src="/me.png" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} onError={(e) => { e.target.style.display = "none"; }} />
             </div>
             <div style={{ textAlign: "center", marginBottom: 18 }}>
-              <p style={{ margin: "0 0 4px", fontSize: "var(--font-size-body)", fontWeight: 600, color: p["--color-text-primary"] }}>Taylor Yeerong</p>
+              <p style={{ margin: "0 0 4px", fontSize: "var(--font-size-body)", fontWeight: 600, color: p["--color-text-primary"] }}>Taylor</p>
               <p style={{ margin: "0 0 3px", fontSize: "var(--font-size-body)", fontWeight: 500, color: p["--color-accent"] }}>Designer & Builder</p>
               <p style={{ margin: 0, fontSize: "var(--font-size-small)", color: p["--color-text-secondary"] }}>~8 YOE in B2B & B2B2C</p>
             </div>

@@ -72,7 +72,7 @@ export default function ProfileCardD() {
         <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 20, marginBottom: 40 }}>
           <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", width: "100%" }}>
             <div style={{ width: 72, height: 72, borderRadius: "50%", overflow: "hidden", background: "var(--color-avatar-gradient)", flexShrink: 0 }}>
-              <img src="/me.png" alt="Taylor Yeerong" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <img src="/me.png" alt="Taylor" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </div>
             <div style={{ display: "flex", gap: 10 }}>
               <IconButton size="sm" variant="tonal" ariaLabel="LinkedIn" icon={<LinkedInIcon />} onClick={() => window.open("https://www.linkedin.com/in/tayloryeerong/", "_blank")} />
@@ -88,7 +88,7 @@ export default function ProfileCardD() {
         <>
           <div style={{ display: "flex", justifyContent: "center", marginBottom: 40 }}>
             <div style={{ width: 112, height: 112, borderRadius: "50%", overflow: "hidden", background: "var(--color-avatar-gradient)", flexShrink: 0 }}>
-              <img src="/me.png" alt="Taylor Yeerong" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <img src="/me.png" alt="Taylor" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </div>
           </div>
           <div style={{ textAlign: "center", marginBottom: 52 }}>

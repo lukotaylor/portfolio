@@ -1,5 +1,5 @@
 export const profileData = {
-  name: "Taylor Yeerong",
+  name: "Taylor",
   title: "Product Designer",
   avatar:
     "/me.png",

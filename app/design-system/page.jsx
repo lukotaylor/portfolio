@@ -602,7 +602,7 @@ function LandingPagePreview({ p }) {
               <img src="/me.png" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} onError={(e) => { e.target.style.display = "none"; }} />
             </div>
             <div style={{ textAlign: "center", marginBottom: 18 }}>
-              <p style={{ margin: "0 0 4px", fontSize: "var(--font-size-body)", fontWeight: 600, color: p["--color-text-primary"] }}>Taylor Yeerong</p>
+              <p style={{ margin: "0 0 4px", fontSize: "var(--font-size-body)", fontWeight: 600, color: p["--color-text-primary"] }}>Taylor</p>
               <p style={{ margin: "0 0 3px", fontSize: "var(--font-size-body)", fontWeight: 500, color: p["--color-accent"] }}>Designer & Builder</p>
               <p style={{ margin: 0, fontSize: "var(--font-size-small)", color: p["--color-text-secondary"] }}>7.5 YOE in B2B & B2B2C</p>
             </div>
@@ -1912,7 +1912,7 @@ export default function DesignSystemPage() {
                       {/* Name + role */}
                       <div style={{ marginBottom: 16 }}>
                         <div style={{ fontSize: "1.125rem", fontWeight: 700, color: "var(--color-text-primary)", lineHeight: 1.2, marginBottom: 3 }}>
-                          Taylor Yeerong
+                          Taylor
                         </div>
                         <div style={{ fontSize: "0.8125rem", fontWeight: 500, color: "var(--color-accent)", marginBottom: 2 }}>
                           Designer & Builder
@@ -1945,7 +1945,7 @@ export default function DesignSystemPage() {
                     background: "var(--color-avatar-gradient)",
                     zIndex: 2,
                   }}>
-                    <img src="/me.png" alt="Taylor Yeerong" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                    <img src="/me.png" alt="Taylor" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                   </div>
 
                 </div>
@@ -1977,7 +1977,7 @@ export default function DesignSystemPage() {
                       {/* Name + role */}
                       <div>
                         <div style={{ fontSize: "1.125rem", fontWeight: 700, color: "var(--color-text-primary)", lineHeight: 1.2, marginBottom: 3 }}>
-                          Taylor Yeerong
+                          Taylor
                         </div>
                         <div style={{ fontSize: "0.8125rem", fontWeight: 500, color: "var(--color-accent)", marginBottom: 2 }}>
                           Designer & Builder
@@ -2002,7 +2002,7 @@ export default function DesignSystemPage() {
                     background: "var(--color-avatar-gradient)",
                     zIndex: 2,
                   }}>
-                    <img src="/me.png" alt="Taylor Yeerong" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                    <img src="/me.png" alt="Taylor" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                   </div>
 
                 </div>
@@ -2025,7 +2025,7 @@ export default function DesignSystemPage() {
                       {/* Name + role */}
                       <div style={{ marginBottom: 20 }}>
                         <div style={{ fontSize: "1.125rem", fontWeight: 700, color: "var(--color-text-primary)", lineHeight: 1.2, marginBottom: 3 }}>
-                          Taylor Yeerong
+                          Taylor
                         </div>
                         <div style={{ fontSize: "0.8125rem", fontWeight: 500, color: "var(--color-accent)", marginBottom: 2 }}>
                           Designer & Builder
@@ -2070,7 +2070,7 @@ export default function DesignSystemPage() {
                     background: "var(--color-avatar-gradient)",
                     zIndex: 2,
                   }}>
-                    <img src="/me.png" alt="Taylor Yeerong" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                    <img src="/me.png" alt="Taylor" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                   </div>
 
                 </div>
@@ -2089,12 +2089,12 @@ export default function DesignSystemPage() {
                   }}>
                     {/* Avatar */}
                     <div style={{ width: 120, height: 120, borderRadius: "50%", overflow: "hidden", margin: "0 auto 24px", background: "var(--color-avatar-gradient)" }}>
-                      <img src="/me.png" alt="Taylor Yeerong" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                      <img src="/me.png" alt="Taylor" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                     </div>
 
                     {/* Name & Title */}
                     <div style={{ marginBottom: 20, textAlign: "center" }}>
-                      <div style={{ fontSize: "1rem", fontWeight: 600, color: "var(--color-text-primary)", lineHeight: 1.2, marginBottom: 4 }}>Taylor Yeerong</div>
+                      <div style={{ fontSize: "1rem", fontWeight: 600, color: "var(--color-text-primary)", lineHeight: 1.2, marginBottom: 4 }}>Taylor</div>
                       <div style={{ fontSize: "0.875rem", fontWeight: 500, color: "var(--color-accent)", marginBottom: 2 }}>Designer & Builder</div>
                       <div style={{ fontSize: "0.875rem", color: "var(--color-text-secondary)" }}>7.5 YOE in B2B & B2B2C</div>
                     </div>
@@ -2158,7 +2158,7 @@ export default function DesignSystemPage() {
                       background: "var(--color-avatar-gradient)",
                       flexShrink: 0,
                     }}>
-                      <img src="/me.png" alt="Taylor Yeerong" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                      <img src="/me.png" alt="Taylor" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                     </div>
                   </div>
 
@@ -2237,7 +2237,7 @@ export default function DesignSystemPage() {
                     border: "4px solid var(--color-bg-primary)",
                     zIndex: 2,
                   }}>
-                    <img src="/me.png" alt="Taylor Yeerong" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                    <img src="/me.png" alt="Taylor" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                   </div>
 
                   {/* CTAs — top-right, top-aligned with avatar */}
