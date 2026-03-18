@@ -13,7 +13,8 @@ export const smartInsights = {
       title: "The Problem",
       blocks: [
         {
-          type: "carousel",                                                           
+          type: "carousel",
+          thumbnails: true,
           description: "Brands need quick access to what customers are saying about them — whether in response to a new product launch or a recent scandal. The existing workflow in Sprinklr Research was powerful and buried. ==6+ clicks stood between a user and a single insight,== requiring significant configuration and cognitive effort just to understand the root cause of one data point.",
           images: [
           { src: "/casestudy/smartinsights/SI02.png", caption: "Step 1: Click negative sentiment score to drill down — a flyout appears with 50+ dimension options to choose from" },
@@ -36,7 +37,7 @@ export const smartInsights = {
         {
           type: "image",
           images: [
-            { src: "/casestudy/smartinsights/smartinsights.gif", caption: "'With Touchscreen Display, I can immediately find out top posts that contributed to high mentions in San Francisco 49ers!'" },
+            { src: "/casestudy/smartinsights/SmartInsights.gif" },
           ],
           fit: "natural",
         },

@@ -83,7 +83,8 @@ export const touchscreen = {
       title: "Exploring Concepts",
       blocks: [
      {
-          type: "carousel",                                                           
+          type: "carousel",
+          thumbnails: true,
           description: "==Concept A:== When tapped, users see an overlay focused on a single data source at a time. This concept revealed the importance of ==showing all visualizations together== to tell a complete story, rather than isolating one data type.",
           images: [
           { src: "/casestudy/touchscreen/contextualoverlay.png", caption: "Contextual overlay modal", grayscale: true },
@@ -92,7 +93,8 @@ export const touchscreen = {
       },
 
            {
-          type: "carousel",                                                           
+          type: "carousel",
+          thumbnails: true,
           description: "==Concept B:== When tapped, users see all data sources at once with a fixed navigation bar highlighting the selected slice. The small footprint keeps context visible without disrupting the view. This direction ==resonated with the team and partnered clients==, and became the foundation for the final design.",
           images: [
           { src: "/casestudy/touchscreen/story01.png", caption: "Bottom navigation", grayscale: true },
@@ -105,7 +107,8 @@ export const touchscreen = {
       title: "Testing Concepts",
       blocks: [
         {
-          type: "carousel",                                                           
+          type: "carousel",
+          thumbnails: true,
           description: "We tested designs on large-format touch screens in person. ==Experiencing the hardware directly== led to refinements we couldn't have caught in a prototype, from navigation placement to visualization clarity.",
           images: [
           { src: "/casestudy/touchscreen/validation01.png", caption: "Testing out different visualizations for sentiment toggles, realizing emotion icons do not work well as they are hard to see on large screens, so opted in for a pie chart" },
@@ -121,7 +124,8 @@ export const touchscreen = {
       title: "Finalizing the Concept",
       blocks: [
         {
-          type: "carousel",                                                           
+          type: "carousel",
+          thumbnails: true,
           description: "Below is the final concept in 3 different color palettes. When creating a Display, designers can choose off-the-shelf color palettes that Sprinklr provides or create a customize palette for the brand they are designing for.",            
           alt: "Screenshot of the dashboard",
           images: [
@@ -131,7 +135,8 @@ export const touchscreen = {
           ],
         },
                 {
-          type: "carousel",                                                           
+          type: "carousel",
+          thumbnails: true,
           description: "With designers able to choose any color palette, I needed the navigation and system states to adapt automatically. I built a ==color system for all new components== so that every state — navigation, loading, empty — would always feel cohesive with the selected palette.",
           images: [
           { src: "/casestudy/touchscreen/rule01.png", caption: "General rules for the navigation pulling from the primary color, background color, and font color" },
