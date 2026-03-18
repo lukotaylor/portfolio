@@ -83,26 +83,52 @@ function MosaicImage({ project, onSelectProject, fill = false, alwaysShowLabel =
         />
       )}
 
-      {/* Category tag */}
-      {project.category && (
+      {/* Category + tags */}
+      {(project.category || project.tags?.length > 0) && (
         <div
           style={{
             position: "absolute",
             top: 10,
             right: 10,
             zIndex: 4,
-            backgroundColor: "var(--color-bg-primary)",
-            color: "var(--color-text-secondary)",
-            borderRadius: 9999,
-            padding: "3px 10px",
-            fontSize: "var(--font-size-label)",
-            fontWeight: 400,
-            letterSpacing: "0.03em",
-            whiteSpace: "nowrap",
+            display: "flex",
+            gap: 6,
             pointerEvents: "none",
           }}
         >
-          {project.category}
+          {project.category && (
+            <div
+              style={{
+                backgroundColor: "var(--color-bg-primary)",
+                color: "var(--color-text-secondary)",
+                borderRadius: 9999,
+                padding: "3px 10px",
+                fontSize: "var(--font-size-label)",
+                fontWeight: 400,
+                letterSpacing: "0.03em",
+                whiteSpace: "nowrap",
+              }}
+            >
+              {project.category}
+            </div>
+          )}
+          {project.tags?.map((tag) => (
+            <div
+              key={tag}
+              style={{
+                backgroundColor: "var(--color-bg-primary)",
+                color: "var(--color-text-secondary)",
+                borderRadius: 9999,
+                padding: "3px 10px",
+                fontSize: "var(--font-size-label)",
+                fontWeight: 400,
+                letterSpacing: "0.03em",
+                whiteSpace: "nowrap",
+              }}
+            >
+              {tag}
+            </div>
+          ))}
         </div>
       )}
 

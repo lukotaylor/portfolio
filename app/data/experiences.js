@@ -12,12 +12,12 @@ export const experiences = [
     dateRange: "2021 – Present",
     location: "Remote",
     description:
-      "I was promoted twice in 4.5 years. I led Recognition & Rewards from 0 to 1, growing ARR to $21.9M, then shifted to leading product strategy for the Performance suite.",
+      "I was promoted twice in 4.5 years. I led Recognition & Rewards from $0 to $21.9M ARR; it currently has the highest usability score in the suite. Right now, I'm leading design and strategy for the Performance product.",
     projects: [
-      { id: "recognition-redesign", category: "Major redesign", ...recognitionRedesign },
+      { id: "recognition-redesign", category: "Major redesign", tags: ["AI"], ...recognitionRedesign },
       { id: "rewards-management", category: "0→1", ...rewardsManagement },
       { id: "rewards-catalog", category: "Enhancement", ...rewardsCatalog },
-      { id: "performance-management", category: "Product strategy", ...performanceManagement },
+      { id: "performance-management", category: "Product strategy", tags: ["AI"], ...performanceManagement },
     ],
   },
   {
@@ -31,7 +31,7 @@ export const experiences = [
     dateRange: "2018 – 2021",
     location: "San Francisco, California",
     description:
-      "I started as an intern and was offered a full-time position on day two. I spent three years making complex social data easy to understand and act on, including a COVID-19 dashboard built for the WHO and Africa CDC.",
+      "I started as an intern and was offered a full-time role on day two. Over three years, I designed data visualization tools that help companies track and understand their brand health, across desktop and large-format touchscreens.",
     projects: [
       { id: "smart-insights", category: "Enhancement", ...smartInsights },
       { id: "touchscreen", category: "0→1", ...touchscreen },
@@ -48,7 +48,7 @@ export const experiences = [
     dateRange: "2014 – 2018",
     location: "Santa Barbara, California",
     description:
-      "I studied Psychology and Art & Technology, and spent a year studying abroad in Copenhagen, Denmark. I found my interest in digital design later in my college years, taught myself the basics, and landed my first internship within three months.",
+      "I studied Psychology and Art & Technology, and spent a year studying abroad in Copenhagen, Denmark. I discovered an interest in digital design, learned the fundamentals, and landed my first internship within three months.",
     projects: [],
   },
 ];

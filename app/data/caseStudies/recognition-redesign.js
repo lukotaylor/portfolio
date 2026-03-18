@@ -1,6 +1,6 @@
 export const recognitionRedesign = {
   title:
-    "Drove a 150% increase in recognition sent by unifying a legacy product and layering in AI",
+    "Drove a 150% increase in recognition sent by unifying a legacy product",
   vimeoId: "1167579687",
   images: [
     "/cover/recognition.png",
@@ -43,9 +43,9 @@ export const recognitionRedesign = {
         {
           type: "list",
           items: [
-            "Shipped AI message refinement and AI-generated recognition summaries to help employees track and surface achievements",
             "Shipped a unified, design-system compliant Recognition experience, including a net-new landing page and a redesigned Give Recognition flow",
             "Built a plug-and-play Give Recognition experience, enabling it to surface across the platform at meaningful moments (next on the roadmap)",
+            "Shipped AI message refinement and AI-generated recognition summaries to help employees track and surface achievements",
             "Cross-integrated with the following teams: Learning Management System, Community, Home, Calendar, and AI + Recommendation",
           ],
         },
@@ -54,18 +54,18 @@ export const recognitionRedesign = {
           type: "carousel",
           images: [
             { src: "/casestudy/RRredesign/landingpage.png", caption: "Net-new landing page consolidating all dispersed Recognition experiences, with Rewards and personalized recommendations of people to recognize" },
-            { src: "/casestudy/RRredesign/cashredemption.png", caption: "Cash redemption — a key differentiator in the R&R space, made possible by Paylocity's native payroll infrastructure. Gift card redemption shipped as a fast follow." },
             { src: "/casestudy/RRredesign/giverecognition.png", caption: "Redesigned Give Recognition flow, addressing key user pain points with net-new capabilities: AI message refinement, attachments, and a richer composition experience" },
             { src: "/casestudy/RRredesign/recognitiondetails.png", caption: "Recognition detail view showing the full message, attachments, likes, comments, and AI-powered comment suggestions" },
+            { src: "/casestudy/RRredesign/cashredemption.png", caption: "Cash redemption — a key differentiator in the R&R space, made possible by Paylocity's native payroll infrastructure. Gift card redemption shipped as a fast follow." },
           ],
           sideBySide: true,
           thumbnails: true,
           mobileAlign: "flex-end",
           mobileImages: [
             { src: "/casestudy/RRredesign/mobile/landingpage.png" },
-            { src: "/casestudy/RRredesign/mobile/cashredemption.png" },
             { src: "/casestudy/RRredesign/mobile/giverecognition.png" },
             { src: "/casestudy/RRredesign/mobile/recognitiondetails.png" },
+            { src: "/casestudy/RRredesign/mobile/cashredemption.png" },
           ],
       },
                                                                           
