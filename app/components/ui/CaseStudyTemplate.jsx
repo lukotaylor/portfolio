@@ -726,10 +726,10 @@ function CarouselBlock({ block }) {
             onClick={!isMobile ? () => setLightbox({ images: desktopItems, startIndex: index, thumbnails: !!block.thumbnails, mobileImages: mobileItems, mobileAlign: block.mobileAlign ?? "center" }) : undefined}
             style={{ display: "flex", alignItems: block.mobileAlign ?? "center", gap: 16, cursor: isMobile ? "default" : "zoom-in" }}
           >
-            <div style={{ flex: "2 1 0", minWidth: 0, borderRadius: 12, overflow: "hidden" }}>
+            <div style={{ flex: "2 1 0", minWidth: 0, borderRadius: isMobile ? 6 : 12, overflow: "hidden" }}>
               <img src={desktopItems[index].src} alt={block.alt ?? ""} style={{ width: "100%", height: "auto", display: "block" }} />
             </div>
-            <div style={{ flex: "0 0 22%", minWidth: 0, borderRadius: 10, overflow: "hidden" }}>
+            <div style={{ flex: "0 0 22%", minWidth: 0, borderRadius: isMobile ? 6 : 10, overflow: "hidden" }}>
               {mobileItems[index]?.noMobile ? (
                 <div style={{ width: "100%", aspectRatio: "9/19.5", backgroundColor: "var(--color-button-tonal-bg)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 8 }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-tertiary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -746,7 +746,7 @@ function CarouselBlock({ block }) {
         ) : (
           <div
             onClick={!isMobile ? () => setLightbox({ images: items, startIndex: index, thumbnails: !!block.thumbnails }) : undefined}
-            style={{ borderRadius: 12, overflow: "hidden", cursor: isMobile ? "default" : "zoom-in" }}
+            style={{ borderRadius: isMobile ? 6 : 12, overflow: "hidden", cursor: isMobile ? "default" : "zoom-in" }}
           >
             <img src={items[index].src} alt={block.alt ?? ""} style={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }} />
           </div>
@@ -927,6 +927,7 @@ function ComparisonBlock({ block, i }) {
 
 function ImageBlock({ block }) {
   const [lightboxIndex, setLightboxIndex] = useState(null);
+  const isMobile = useMobile();
 
   const items = block.images
     ? block.images.map((img) => (typeof img === "string" ? { src: img, caption: null } : img))
@@ -972,7 +973,7 @@ function ImageBlock({ block }) {
             <div key={idx}>
               <div style={{
                 backgroundColor: block.bg ? "var(--color-bg-card)" : undefined,
-                borderRadius: block.bg ? 16 : 12,
+                borderRadius: block.bg ? 16 : (isMobile ? 6 : 12),
                 padding: block.bg ? 24 : 0,
                 height: containHeight,
                 display: "flex",
@@ -1006,7 +1007,7 @@ function ImageBlock({ block }) {
       <>
         <div>
           {descriptionBlock}
-          <MatchHeightRow items={items} fill={block.fill} bg={block.bg} onImageClick={(idx) => setLightboxIndex(idx)} />
+          <MatchHeightRow items={items} fill={block.fill} bg={block.bg} borderRadius={isMobile ? 6 : 12} onImageClick={(idx) => setLightboxIndex(idx)} />
         </div>
         {lightboxIndex !== null && (
           <Lightbox images={items} startIndex={lightboxIndex} onClose={() => setLightboxIndex(null)} />
@@ -1031,7 +1032,7 @@ function ImageBlock({ block }) {
                     width: "100%",
                     height: "auto",
                     aspectRatio: (!isSingle && !isNatural) ? "4/3" : undefined,
-                    borderRadius: block.bg ? 0 : 12,
+                    borderRadius: block.bg ? 0 : (isMobile ? 6 : 12),
                     display: "block",
                     objectFit: (!isSingle && !isNatural) ? "cover" : undefined,
                     filter: grayscale ? "grayscale(1)" : undefined,
@@ -1072,6 +1073,35 @@ function ImageBlock({ block }) {
         <Lightbox images={items} startIndex={lightboxIndex} onClose={() => setLightboxIndex(null)} />
       )}
     </>
+  );
+}
+
+function DeviceCompareBlock({ block }) {
+  const isMobile = useMobile();
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+      <div style={{ display: "flex", alignItems: "flex-end", gap: 16 }}>
+        <div style={{ flex: "2 1 0", minWidth: 0 }}>
+          <img
+            src={block.desktop.src}
+            alt="Desktop"
+            style={{ width: "100%", height: "auto", display: "block", borderRadius: isMobile ? 6 : 10 }}
+          />
+        </div>
+        <div style={{ flex: "0 0 22%", minWidth: 0 }}>
+          <img
+            src={block.mobile.src}
+            alt="Mobile"
+            style={{ width: "100%", height: "auto", display: "block", borderRadius: isMobile ? 6 : 10 }}
+          />
+        </div>
+      </div>
+      {block.caption && (
+        <p style={{ margin: 0, fontSize: "var(--font-size-small)", color: "var(--color-text-tertiary)", textAlign: "center", lineHeight: 1.5 }}>
+          {block.caption}
+        </p>
+      )}
+    </div>
   );
 }
 
@@ -1529,33 +1559,7 @@ function renderBlock(block, i) {
   }
 
   if (block.type === "device-compare") {
-    return (
-      <div key={i} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-        <div style={{ display: "flex", alignItems: "flex-end", gap: 16 }}>
-          {/* Desktop */}
-          <div style={{ flex: "2 1 0", minWidth: 0 }}>
-            <img
-              src={block.desktop.src}
-              alt="Desktop"
-              style={{ width: "100%", height: "auto", display: "block", borderRadius: 10 }}
-            />
-          </div>
-          {/* Mobile */}
-          <div style={{ flex: "0 0 22%", minWidth: 0 }}>
-            <img
-              src={block.mobile.src}
-              alt="Mobile"
-              style={{ width: "100%", height: "auto", display: "block", borderRadius: 10 }}
-            />
-          </div>
-        </div>
-        {block.caption && (
-          <p style={{ margin: 0, fontSize: "var(--font-size-small)", color: "var(--color-text-tertiary)", textAlign: "center", lineHeight: 1.5 }}>
-            {block.caption}
-          </p>
-        )}
-      </div>
-    );
+    return <DeviceCompareBlock key={i} block={block} />;
   }
 
   if (block.type === "embed" && block.src) {
