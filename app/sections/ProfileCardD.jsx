@@ -81,7 +81,7 @@ export default function ProfileCardD() {
             </div>
           </div>
           <p style={{ margin: 0, fontSize: "var(--font-size-display)", fontWeight: 700, color: "var(--color-text-primary)", lineHeight: 1.35 }}>
-            I'm Taylor, a product designer with about 8 years of experience building B2B and B2B2C SaaS ˙ᵕ˙
+            I'm Taylor, a product designer with ~8 years of experience building B2B and B2B2C SaaS ˙ᵕ˙
           </p>
         </div>
       ) : (
@@ -93,7 +93,7 @@ export default function ProfileCardD() {
           </div>
           <div style={{ textAlign: "center", marginBottom: 52 }}>
             <p style={{ margin: 0, fontSize: "var(--font-size-display)", fontWeight: 700, color: "var(--color-text-primary)", lineHeight: 1.35, maxWidth: 700, marginInline: "auto" }}>
-              I'm Taylor, a product designer with about 8 years of experience building B2B and B2B2C SaaS ˙ᵕ˙
+              I'm Taylor, a product designer with ~8 years of experience building B2B and B2B2C SaaS ˙ᵕ˙
             </p>
           </div>
         </>

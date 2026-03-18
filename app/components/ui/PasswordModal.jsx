@@ -134,7 +134,7 @@ export default function PasswordModal({ onSuccess, onClose }) {
           <p style={{ margin: 0, fontSize: "var(--font-size-small)", color: "var(--color-text-tertiary)", textAlign: "center", lineHeight: 1.6 }}>
             Don't have the password?{" "}
             <a
-              href="mailto:yositayeerong@gmail.com"
+              href="mailto:tayloryeerong@gmail.com"
               style={{ color: "var(--color-accent)", textDecoration: "none", fontWeight: 500 }}
             >
               Get in touch
