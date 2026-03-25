@@ -62,7 +62,6 @@ export default function ProfileCardD() {
       {!isMobile && (
         <div style={{ position: "absolute", top: 24, right: 24, display: "flex", gap: 12 }}>
           <IconButton size="md" variant="tonal" ariaLabel="LinkedIn" icon={<LinkedInIcon />} onClick={() => window.open("https://www.linkedin.com/in/tayloryeerong/", "_blank")} />
-          <IconButton size="md" variant="tonal" ariaLabel="Resume"   icon={<FileText size={16} />} onClick={() => window.open("/resume.pdf", "_blank")} />
           <IconButton size="md" variant="tonal" ariaLabel="Email"    icon={<Mail size={16} />} onClick={() => window.open("mailto:tayloryeerong@gmail.com")} />
         </div>
       )}
@@ -76,7 +75,6 @@ export default function ProfileCardD() {
             </div>
             <div style={{ display: "flex", gap: 10 }}>
               <IconButton size="sm" variant="tonal" ariaLabel="LinkedIn" icon={<LinkedInIcon />} onClick={() => window.open("https://www.linkedin.com/in/tayloryeerong/", "_blank")} />
-              <IconButton size="sm" variant="tonal" ariaLabel="Resume"   icon={<FileText size={14} />} onClick={() => window.open("/resume.pdf", "_blank")} />
               <IconButton size="sm" variant="tonal" ariaLabel="Email"    icon={<Mail size={14} />} onClick={() => window.open("mailto:tayloryeerong@gmail.com")} />
             </div>
           </div>
