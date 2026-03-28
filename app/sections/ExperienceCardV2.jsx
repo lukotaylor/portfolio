@@ -239,7 +239,9 @@ export default function ExperienceCardV2({ experience, onSelectProject }) {
       { threshold: 0.08 }
     );
     observer.observe(el);
-    return () => observer.disconnect();
+    // Fallback: if already in viewport on mount the observer may not fire
+    const fallback = setTimeout(() => setVisible(true), 300);
+    return () => { observer.disconnect(); clearTimeout(fallback); };
   }, []);
 
   return (
