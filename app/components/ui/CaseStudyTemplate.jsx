@@ -729,7 +729,7 @@ function CarouselBlock({ block }) {
             <div style={{ flex: "2 1 0", minWidth: 0, borderRadius: isMobile ? 6 : 12, overflow: "hidden" }}>
               <img src={desktopItems[index].src} alt={block.alt ?? ""} style={{ width: "100%", height: "auto", display: "block" }} />
             </div>
-            <div style={{ flex: "0 0 22%", minWidth: 0, borderRadius: isMobile ? 6 : 10, overflow: "hidden" }}>
+            <div style={{ flex: `0 0 ${block.mobileWidth ?? "22%"}`, minWidth: 0, borderRadius: isMobile ? 6 : 10, overflow: "hidden" }}>
               {mobileItems[index]?.noMobile ? (
                 <div style={{ width: "100%", aspectRatio: "9/19.5", backgroundColor: "var(--color-button-tonal-bg)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 8 }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-tertiary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">

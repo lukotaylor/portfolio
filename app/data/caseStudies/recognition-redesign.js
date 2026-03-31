@@ -21,6 +21,8 @@ export const recognitionRedesign = {
           type: "carousel",
           sideBySide: true,
           thumbnails: true,
+          mobileWidth: "18%",
+          mobileAlign: "flex-end",
           images: [
             { src: "/casestudy/RRredesign/ESSLegacy.png", caption: "Legacy feed in HR & Payroll product" },
             { src: "/casestudy/RRredesign/Leaderboard.png", caption: "Legacy leaderboard in HR & Payroll product" },
@@ -43,10 +45,9 @@ export const recognitionRedesign = {
         {
           type: "list",
           items: [
-            "Shipped a unified, design-system compliant Recognition experience, including a net-new landing page and a redesigned Give Recognition flow",
-            "Built a plug-and-play Give Recognition experience, enabling it to surface across the platform at meaningful moments (next on the roadmap)",
-            "Shipped AI message refinement and AI-generated recognition summaries to help employees track and surface achievements",
-            "Cross-integrated with the following teams: Learning Management System, Community, Home, Calendar, and AI + Recommendation",
+            "Shipped a ==unified, design-system compliant== Recognition experience, including a net-new landing page and a redesigned Give Recognition flow",
+            "Built a ==plug-and-play Give Recognition experience==, enabling it to surface across the platform at meaningful moments (next on the roadmap)",
+            "Shipped ==two AI capabilities==: message refinement to improve recognition quality, and recognition summaries that synthesize what an employee has been recognized for over time",
           ],
         },
 
