@@ -137,7 +137,7 @@ function LightboxCloseButton({ onClick }) {
 
 /* ---- lightbox ---- */
 
-function Lightbox({ images, startIndex = 0, thumbnails = false, mobileImages = null, mobileAlign = "center", onClose }) {
+function Lightbox({ images, startIndex = 0, thumbnails = false, mobileImages = null, mobileAlign = "center", mobileWidth = "22%", onClose }) {
   const [index, setIndex] = useState(startIndex);
   const isMobile = useMobile();
 
@@ -200,7 +200,7 @@ function Lightbox({ images, startIndex = 0, thumbnails = false, mobileImages = n
         style={{
           position: "relative",
           width: "100%",
-          maxWidth: "min(1200px, calc(90vw - 80px))",
+          maxWidth: showSideBySide ? "min(1020px, calc(80vw - 80px))" : "min(1200px, calc(90vw - 80px))",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -221,7 +221,7 @@ function Lightbox({ images, startIndex = 0, thumbnails = false, mobileImages = n
                 style={{ width: "100%", height: "auto", display: "block", maxHeight: hasThumbs ? "calc(80vh - 110px)" : "80vh", objectFit: "contain" }}
               />
             </div>
-            <div style={{ flex: "0 0 22%", minWidth: 0, borderRadius: 10, overflow: "hidden" }}>
+            <div style={{ flex: `0 0 ${mobileWidth}`, minWidth: 0, borderRadius: 10, overflow: "hidden" }}>
               {currentMobile.noMobile ? (
                 <div style={{ width: "100%", aspectRatio: "9/19.5", backgroundColor: "var(--color-bg-card)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 8, borderRadius: 10 }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-tertiary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -230,7 +230,7 @@ function Lightbox({ images, startIndex = 0, thumbnails = false, mobileImages = n
                   <span style={{ fontSize: "var(--font-size-label)", color: "var(--color-text-tertiary)", textAlign: "center", lineHeight: 1.4, padding: "0 8px" }}>No mobile</span>
                 </div>
               ) : (
-                <img src={currentMobile.src} alt="Mobile" style={{ width: "100%", height: "auto", display: "block" }} />
+                <img src={currentMobile.src} alt="Mobile" style={{ width: "100%", height: "auto", display: "block", maxHeight: hasThumbs ? "calc(80vh - 110px)" : "80vh", objectFit: "contain" }} />
               )}
             </div>
           </div>
@@ -251,18 +251,16 @@ function Lightbox({ images, startIndex = 0, thumbnails = false, mobileImages = n
 
         {images.length > 1 && index < images.length - 1 && arrowBtn("right")}
 
-        {current.caption && (
-          <p style={{ color: "var(--color-text-secondary)", fontSize: "var(--font-size-small)", textAlign: "center", margin: "12px 0 0", lineHeight: 1.5 }}>
-            {current.caption}
-          </p>
-        )}
+        <p style={{ color: "var(--color-text-secondary)", fontSize: "var(--font-size-small)", textAlign: "center", margin: "12px 0 0", lineHeight: 1.5, minHeight: "3em" }}>
+          {current.caption ?? ""}
+        </p>
       </div>
 
       {/* Thumbnails */}
       {hasThumbs && (
         <div
           onClick={(e) => e.stopPropagation()}
-          style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 4, maxWidth: "min(1200px, calc(90vw - 80px))", flexShrink: 0 }}
+          style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 4, maxWidth: showSideBySide ? "min(1020px, calc(80vw - 80px))" : "min(1200px, calc(90vw - 80px))", flexShrink: 0 }}
         >
           {images.map((item, idx) => (
             <button
@@ -723,7 +721,7 @@ function CarouselBlock({ block }) {
       <div style={{ position: "relative" }}>
         {sideBySide ? (
           <div
-            onClick={!isMobile ? () => setLightbox({ images: desktopItems, startIndex: index, thumbnails: !!block.thumbnails, mobileImages: mobileItems, mobileAlign: block.mobileAlign ?? "center" }) : undefined}
+            onClick={!isMobile ? () => setLightbox({ images: desktopItems, startIndex: index, thumbnails: !!block.thumbnails, mobileImages: mobileItems, mobileAlign: block.mobileAlign ?? "center", mobileWidth: block.mobileWidth ?? "22%" }) : undefined}
             style={{ display: "flex", alignItems: block.mobileAlign ?? "center", gap: 16, cursor: isMobile ? "default" : "zoom-in" }}
           >
             <div style={{ flex: "2 1 0", minWidth: 0, borderRadius: isMobile ? 6 : 12, overflow: "hidden" }}>
@@ -820,6 +818,7 @@ function CarouselBlock({ block }) {
           thumbnails={lightbox.thumbnails}
           mobileImages={lightbox.mobileImages ?? null}
           mobileAlign={lightbox.mobileAlign ?? "center"}
+          mobileWidth={lightbox.mobileWidth ?? "22%"}
           onClose={() => setLightbox(null)}
         />
       )}
